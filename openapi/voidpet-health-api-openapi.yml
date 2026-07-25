@@ -1,0 +1,33 @@
+openapi: 3.1.0
+info:
+  title: Voidpet Public Discovery Health API
+  version: 1.0.0
+  description: Read-only discovery for Voidpet's public products, pages, legal documents, and agent-facing metadata.
+servers:
+- url: https://voidpet.com
+tags:
+- name: Health
+paths:
+  /api/health:
+    get:
+      operationId: getDiscoveryHealth
+      summary: Get the public discovery service's health
+      responses:
+        '200':
+          description: Service health
+          content:
+            application/json:
+              schema:
+                type: object
+                required:
+                - status
+                - service
+                properties:
+                  status:
+                    type: string
+                    const: ok
+                  service:
+                    type: string
+                    const: voidpet-web
+      tags:
+      - Health
