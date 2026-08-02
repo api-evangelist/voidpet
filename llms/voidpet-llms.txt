@@ -1,0 +1,28 @@
+# Voidpet
+
+> Voidpet makes emotion-inspired games, stories, characters, and community — including Voidpet Dungeon (a turn-based roguelite RPG) and Voidpet Garden (a mental-health companion game). Voidpet exposes a small, public, read-only Discovery API plus a published MCP server and Agent Skill for discovering its public products, pages, and legal documents. No authentication; no account or game-state access.
+
+## APIs
+
+- [Voidpet Public Discovery API (OpenAPI 3.1)](https://voidpet.com/.well-known/openapi.json): Read-only discovery of public products, pages, and agent-facing metadata (GET /api/discovery, GET /api/health).
+
+## Agent interfaces
+
+- [MCP server card](https://voidpet.com/.well-known/mcp/server-card.json): Public streamable-http MCP server at https://voidpet.com/mcp (tool: search_public_pages).
+- [Agent Skills index](https://voidpet.com/.well-known/agent-skills/index.json): voidpet-site-guide skill for navigating public Voidpet surfaces.
+- [API catalog (RFC 9727)](https://voidpet.com/.well-known/api-catalog): Linkset pointing at the OpenAPI, docs, and health endpoints.
+- [API docs](https://voidpet.com/.well-known/api-docs.md): Human/agent-readable description of the discovery endpoints.
+
+## Docs
+
+- [Introduction](https://voidpet.com/o/introduction): An introduction to Voidpet and its emotion-inspired world.
+- [Voidpet Dungeon](https://voidpet.com/o/dungeon): Turn-based roguelite RPG.
+- [Voidpet Garden](https://voidpet.com/o/garden): Mental-health companion game.
+- [VoidDex](https://voidpet.com/o/dex): Public information about Voidpets, emotions, vivids, and characters.
+- [Gallery](https://voidpet.com/o/gallery): Official Voidpet art gallery.
+- [Blog](https://voidpet.com/o/blog): Official Voidpet development and design articles.
+
+## Legal
+
+- [Privacy Policy](https://voidpet.com/o/privacy)
+- [Terms of Service](https://voidpet.com/o/terms)

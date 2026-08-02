@@ -1,0 +1,32 @@
+generated: '2026-07-21'
+method: searched
+status: published
+source: https://voidpet.com/.well-known/mcp/server-card.json
+server:
+  name: voidpet-public-site
+  title: Voidpet Public Site
+  transport: streamable-http
+  endpoint: /mcp
+  url: https://voidpet.com/mcp
+  protocol_version: '2025-06-18'
+  documentation: https://voidpet.com/.well-known/api-docs.md
+  server_card: mcp/voidpet-server-card.json
+authentication:
+  required: false
+  schemes: []
+description: >-
+  Read-only, public MCP server exposing Voidpet's public products, pages, and
+  legal-document discovery metadata. No authentication; no account or game-state
+  access.
+tools:
+- name: search_public_pages
+  title: Search Voidpet public pages
+  description: Search Voidpet's public product, editorial, gallery, and legal pages. No authentication required.
+  read_only: true
+resources:
+- uri: https://voidpet.com/api/discovery
+  name: voidpet-public-discovery
+  description: Public Voidpet products, pages, legal documents, and machine-readable discovery endpoints.
+- uri: mcp://server-card.json
+  name: voidpet-mcp-server-card
+  description: Static metadata for the public Voidpet MCP server.

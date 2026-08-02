@@ -1,0 +1,25 @@
+{
+  "provider": "voidpet",
+  "sources": [
+    "voidpet-discovery-api-openapi.yml",
+    "voidpet-health-api-openapi.yml",
+    "well-known/voidpet-openapi.json"
+  ],
+  "outputs": [
+    "voidpet-discovery-api-openapi.yml",
+    "voidpet-health-api-openapi.yml"
+  ],
+  "archived": [
+    "archived well-known/voidpet-openapi.json"
+  ],
+  "errors": [],
+  "warnings": [],
+  "notes": [
+    "discovered stray spec: well-known/voidpet-openapi.json",
+    "voidpet-openapi.json: tagged GET /api/discovery -> Discovery",
+    "voidpet-openapi.json: tagged GET /api/health -> Health",
+    "voidpet-openapi.json: declared missing tag: Discovery",
+    "voidpet-openapi.json: declared missing tag: Health"
+  ],
+  "skipped": []
+}

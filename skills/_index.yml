@@ -1,0 +1,17 @@
+generated: '2026-07-21'
+method: searched
+source: https://voidpet.com/.well-known/agent-skills/index.json
+skills:
+- file: voidpet-site-guide.md
+  name: voidpet-site-guide
+  method: searched
+  source: https://voidpet.com/.well-known/agent-skills/voidpet-site-guide/SKILL.md
+  description: Discover and navigate Voidpet's public products, stories, characters, gallery, and legal documents.
+  api: openapi/voidpet-discovery-openapi.json
+  operations: [getPublicDiscovery]
+- file: voidpet-discovery-api.md
+  name: voidpet-discovery-api
+  method: generated
+  description: Read Voidpet's public discovery document and check service health via the Public Discovery API.
+  api: openapi/voidpet-discovery-openapi.json
+  operations: [getPublicDiscovery, getDiscoveryHealth]

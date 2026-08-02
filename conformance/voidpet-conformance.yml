@@ -1,0 +1,26 @@
+generated: '2026-07-21'
+method: derived
+source: openapi/voidpet-discovery-openapi.json
+standards:
+- id: openapi-3.1
+  conforms: true
+  evidence: openapi field is 3.1.0
+- id: rest
+  conforms: true
+  evidence: resource-oriented GET endpoints returning application/json
+- id: rfc9727-api-catalog
+  conforms: true
+  evidence: /.well-known/api-catalog served as an RFC 9727 linkset
+- id: mcp
+  conforms: true
+  evidence: published MCP server card at /.well-known/mcp/server-card.json (protocol 2025-06-18)
+- id: agentskills-discovery
+  conforms: true
+  evidence: /.well-known/agent-skills/index.json schema agentskills.io 0.2.0
+- id: oauth2
+  conforms: false
+- id: oidc
+  conforms: false
+- id: rfc9457-problem-details
+  conforms: false
+  evidence: spec declares no error responses

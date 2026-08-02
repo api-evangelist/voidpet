@@ -1,0 +1,59 @@
+{
+  "$schema": "https://static.modelcontextprotocol.io/schemas/mcp-server-card/v1.json",
+  "version": "1.0",
+  "protocolVersion": "2025-06-18",
+  "serverInfo": {
+    "name": "voidpet-public-site",
+    "title": "Voidpet Public Site",
+    "version": "1.0.0"
+  },
+  "description": "Read-only discovery for Voidpet's public products, pages, and legal documents.",
+  "documentationUrl": "https://voidpet.com/.well-known/api-docs.md",
+  "transport": {
+    "type": "streamable-http",
+    "endpoint": "/mcp"
+  },
+  "capabilities": {
+    "tools": { "listChanged": false },
+    "resources": { "subscribe": false, "listChanged": false }
+  },
+  "authentication": {
+    "required": false,
+    "schemes": []
+  },
+  "instructions": "This server is public and read-only. Use it to discover Voidpet pages and metadata.",
+  "resources": [
+    {
+      "uri": "https://voidpet.com/api/discovery",
+      "name": "voidpet-public-discovery",
+      "title": "Voidpet public discovery document",
+      "description": "Public Voidpet products, pages, legal documents, and machine-readable discovery endpoints.",
+      "mimeType": "application/json"
+    },
+    {
+      "uri": "mcp://server-card.json",
+      "name": "voidpet-mcp-server-card",
+      "title": "Voidpet MCP server card",
+      "description": "Static metadata for the public Voidpet MCP server.",
+      "mimeType": "application/json"
+    }
+  ],
+  "tools": [
+    {
+      "name": "search_public_pages",
+      "title": "Search Voidpet public pages",
+      "description": "Search Voidpet's public product, editorial, gallery, and legal pages. No authentication is required.",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "query": {
+            "type": "string",
+            "description": "Optional text to match against public page titles, descriptions, and paths."
+          }
+        },
+        "additionalProperties": false
+      },
+      "annotations": { "readOnlyHint": true }
+    }
+  ]
+}

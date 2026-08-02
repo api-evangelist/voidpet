@@ -1,0 +1,12 @@
+{
+  "$schema": "https://schemas.agentskills.io/discovery/0.2.0/schema.json",
+  "skills": [
+    {
+      "name": "voidpet-site-guide",
+      "type": "skill-md",
+      "description": "Discover and navigate Voidpet's public products, stories, characters, gallery, and legal documents.",
+      "url": "/.well-known/agent-skills/voidpet-site-guide/SKILL.md",
+      "digest": "sha256:8f425c201a332d84b3b9bdb686da4995bc984436ec818dac140480f61e8ae1bc"
+    }
+  ]
+}

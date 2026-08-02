@@ -1,0 +1,20 @@
+overlay: 1.0.0
+info:
+  title: API Evangelist enhancements for Voidpet Public Discovery API
+  version: 1.0.0
+extends: openapi/voidpet-discovery-openapi.json
+actions:
+- target: $.info
+  update:
+    x-apievangelist-profile: read-only public discovery
+    x-apievangelist-auth: none
+    x-apievangelist-mcp: https://voidpet.com/mcp
+    x-apievangelist-agent-skill: https://voidpet.com/.well-known/agent-skills/index.json
+- target: $.paths['/api/discovery'].get
+  update:
+    tags: [Discovery]
+    x-apievangelist-note: Returns the full public catalog of products, pages, and discovery endpoints in one response.
+- target: $.paths['/api/health'].get
+  update:
+    tags: [Discovery]
+    x-apievangelist-note: Liveness check for the public discovery service.

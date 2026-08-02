@@ -1,0 +1,16 @@
+generated: '2026-07-21'
+method: derived
+source: openapi/voidpet-discovery-openapi.json
+versioning:
+  scheme: semver
+  current: 1.0.0
+  detail: Version carried in OpenAPI info.version. No dated or header-based API versioning documented.
+deprecation:
+  policy_url: null
+  sunset_header: false
+  detail: No deprecation policy or RFC 8594 Sunset/Deprecation header support found.
+sla:
+  url: null
+status_page: null
+health_endpoint: https://voidpet.com/api/health
+deprecated_operations: []

@@ -1,0 +1,76 @@
+{
+  "openapi": "3.1.0",
+  "info": {
+    "title": "Voidpet Public Discovery API",
+    "version": "1.0.0",
+    "description": "Read-only discovery for Voidpet's public products, pages, legal documents, and agent-facing metadata."
+  },
+  "servers": [{ "url": "https://voidpet.com" }],
+  "paths": {
+    "/api/discovery": {
+      "get": {
+        "operationId": "getPublicDiscovery",
+        "summary": "Get Voidpet's public discovery document",
+        "responses": {
+          "200": {
+            "description": "Public site metadata and canonical URLs",
+            "content": {
+              "application/json": {
+                "schema": { "$ref": "#/components/schemas/DiscoveryDocument" }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/health": {
+      "get": {
+        "operationId": "getDiscoveryHealth",
+        "summary": "Get the public discovery service's health",
+        "responses": {
+          "200": {
+            "description": "Service health",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "required": ["status", "service"],
+                  "properties": {
+                    "status": { "type": "string", "const": "ok" },
+                    "service": { "type": "string", "const": "voidpet-web" }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "PublicPage": {
+        "type": "object",
+        "required": ["path", "title", "description", "url"],
+        "properties": {
+          "path": { "type": "string" },
+          "title": { "type": "string" },
+          "description": { "type": "string" },
+          "url": { "type": "string", "format": "uri" }
+        }
+      },
+      "DiscoveryDocument": {
+        "type": "object",
+        "required": ["name", "description", "url", "products", "pages", "discovery"],
+        "properties": {
+          "name": { "type": "string" },
+          "description": { "type": "string" },
+          "url": { "type": "string", "format": "uri" },
+          "products": { "type": "array", "items": { "type": "object" } },
+          "pages": { "type": "array", "items": { "$ref": "#/components/schemas/PublicPage" } },
+          "discovery": { "type": "object" }
+        }
+      }
+    }
+  }
+}

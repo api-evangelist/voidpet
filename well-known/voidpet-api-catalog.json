@@ -1,0 +1,1 @@
+{"linkset":[{"anchor":"https://voidpet.com/api/discovery","service-desc":[{"href":"https://voidpet.com/.well-known/openapi.json","type":"application/vnd.oai.openapi+json"}],"service-doc":[{"href":"https://voidpet.com/.well-known/api-docs.md","type":"text/markdown"}],"status":[{"href":"https://voidpet.com/api/health","type":"application/json"}]}]}

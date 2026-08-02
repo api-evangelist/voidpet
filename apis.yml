@@ -1,22 +1,119 @@
 aid: voidpet
 name: Voidpet
-description: Voidpet is a company surfaced as a portfolio company of a16z and added to the API Evangelist
-  network as a stub for enrichment. This profile is a lead awaiting the enrichment pipeline.
+description: >-
+  Voidpet is a creative games studio behind emotion-inspired games, stories,
+  characters, and community — including Voidpet Dungeon, a turn-based roguelite
+  RPG about befriending and battling emotion-inspired creatures, and Voidpet
+  Garden, a mental-health companion game for collecting emotions and practicing
+  self care. Beyond the games, Voidpet publishes a small, public, read-only
+  Discovery API (OpenAPI 3.1) plus a hosted Model Context Protocol server and a
+  packaged Agent Skill so agents can discover its public products, pages, and
+  legal documents. The discovery surface exposes no accounts, game state, or
+  authenticated actions — it is agent-facing metadata only.
 url: https://raw.githubusercontent.com/api-evangelist/voidpet/refs/heads/main/apis.yml
 x-type: company
 x-source: vc-portfolio
 x-backed-by:
 - a16z
-x-tier: stub
-x-tier-reason: portfolio-lead
+x-tier: profiled
+x-tier-reason: public-discovery-api
+accessModel:
+  pricing: unknown
+  onboarding: open
+  trial: false
+  try_now: false
+  public: true
+  label: Open access
+  confidence: medium
+  source:
+  - authentication
+  generated: '2026-07-22'
+  method: derived
 specificationVersion: '0.20'
 created: '2026-07-17'
-modified: '2026-07-17'
+modified: '2026-07-21'
+image: https://voidpet.com/ogimage.png
 tags:
 - Company
-apis: []
+- Games
+- Gaming
+- Mental Health
+- Wellness
+- Discovery
+- Agents
+- MCP
+- Read Only
+apis:
+- aid: voidpet:voidpet-discovery-api
+  name: Voidpet Discovery API
+  description: The Discovery API from Voidpet — 1 operation(s) for discovery.
+  humanURL: https://voidpet.com
+  baseURL: https://voidpet.com
+  tags:
+  - Discovery
+  properties:
+  - type: OpenAPI
+    url: openapi/voidpet-discovery-api-openapi.yml
+  - type: Documentation
+    url: https://voidpet.com/.well-known/api-docs.md
+  - type: APIReference
+    url: https://voidpet.com/.well-known/openapi.json
+  - type: DataModel
+    url: data-model/voidpet-data-model.yml
+  - type: Conventions
+    url: conventions/voidpet-conventions.yml
+- aid: voidpet:voidpet-health-api
+  name: Voidpet Health API
+  description: The Health API from Voidpet — 1 operation(s) for health.
+  humanURL: https://voidpet.com
+  baseURL: https://voidpet.com
+  tags:
+  - Health
+  properties:
+  - type: OpenAPI
+    url: openapi/voidpet-health-api-openapi.yml
+  - type: Documentation
+    url: https://voidpet.com/.well-known/api-docs.md
+  - type: APIReference
+    url: https://voidpet.com/.well-known/openapi.json
+  - type: DataModel
+    url: data-model/voidpet-data-model.yml
+  - type: Conventions
+    url: conventions/voidpet-conventions.yml
 maintainers:
 - FN: Kin Lane
   email: kin@apievangelist.com
 - FN: APIs.json
   email: info@apis.io
+x-enrichment:
+  date: '2026-07-21'
+  status: enriched
+  artifacts_added: 20
+  pass: local-v1
+common:
+- type: DomainSecurity
+  url: security/voidpet-domain-security.yml
+- type: Authentication
+  url: authentication/voidpet-authentication.yml
+- type: MCPServer
+  url: mcp/voidpet-mcp.yml
+- type: AgentSkill
+  url: skills/_index.yml
+- type: WellKnown
+  url: well-known/voidpet-well-known.yml
+- type: LLMsTxt
+  url: llms/voidpet-llms.txt
+- type: Conformance
+  url: conformance/voidpet-conformance.yml
+- type: Lifecycle
+  url: lifecycle/voidpet-lifecycle.yml
+- type: Documentation
+  url: https://voidpet.com/.well-known/api-docs.md
+- type: APIReference
+  url: https://voidpet.com/.well-known/openapi.json
+- type: Blog
+  url: https://voidpet.com/o/blog
+- type: TermsOfService
+  url: https://voidpet.com/o/terms
+- type: PrivacyPolicy
+  url: https://voidpet.com/o/privacy

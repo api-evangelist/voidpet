@@ -1,0 +1,22 @@
+generated: '2026-07-21'
+method: derived
+source: openapi/voidpet-discovery-openapi.json
+entities:
+- name: DiscoveryDocument
+  description: Top-level public site metadata returned by GET /api/discovery.
+  fields: [name, description, url, products, pages, discovery]
+- name: PublicPage
+  description: A curated public page (product, editorial, gallery, or legal).
+  fields: [path, title, description, url]
+- name: Product
+  description: A Voidpet product (e.g. Voidpet Dungeon, Voidpet Garden). Untyped object in spec.
+  fields: [name, description, url]
+relationships:
+- from: DiscoveryDocument
+  to: PublicPage
+  kind: has_many
+  via: pages
+- from: DiscoveryDocument
+  to: Product
+  kind: has_many
+  via: products

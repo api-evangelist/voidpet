@@ -1,0 +1,34 @@
+generated: '2026-07-21'
+method: searched
+source: https://voidpet.com/.well-known/api-docs.md
+summary: >-
+  Cross-cutting semantics for the Voidpet Public Discovery API. It is a small,
+  public, read-only JSON API with no authentication, no pagination, and no
+  mutating operations, so most write-oriented conventions (idempotency, rate-limit
+  signaling) do not apply.
+authentication:
+  style: none
+  detail: Public read-only; no credentials. See authentication/voidpet-authentication.yml
+content_negotiation:
+  default: application/json
+  markdown: "Public pages support `Accept: text/markdown` for an agent-friendly representation."
+pagination:
+  supported: false
+  detail: Discovery document returns full products/pages arrays in one response.
+idempotency:
+  supported: false
+  detail: All operations are GET (safe and idempotent by HTTP semantics); no state-changing endpoints and no idempotency-key header.
+versioning:
+  scheme: semver
+  current: 1.0.0
+  detail: Version carried in OpenAPI info.version; no dated/header API versioning documented.
+error_envelope:
+  documented: false
+  detail: Spec declares no 4xx/5xx responses; no error catalog derivable.
+rate_limiting:
+  documented: false
+discovery:
+  api_catalog: https://voidpet.com/.well-known/api-catalog
+  openapi: https://voidpet.com/.well-known/openapi.json
+  mcp_server_card: https://voidpet.com/.well-known/mcp/server-card.json
+  agent_skills: https://voidpet.com/.well-known/agent-skills/index.json

@@ -1,0 +1,13 @@
+generated: '2026-07-21'
+method: searched
+source: https://voidpet.com/.well-known/api-docs.md
+docs: https://voidpet.com/.well-known/openapi.json
+summary:
+  types: [none]
+  note: >-
+    The Voidpet Public Discovery API is public and read-only. It declares no
+    securitySchemes in its OpenAPI and the MCP server card sets
+    authentication.required = false. It exposes no accounts, game state, or
+    authenticated actions, so there is no API key, OAuth, or bearer surface to
+    document.
+schemes: []
