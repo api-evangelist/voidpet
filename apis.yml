@@ -91,6 +91,8 @@ x-enrichment:
   artifacts_added: 20
   pass: local-v1
 common:
+- type: Overlay
+  url: overlays/voidpet-discovery-overlay.yaml
 - type: DomainSecurity
   url: security/voidpet-domain-security.yml
 - type: Authentication
