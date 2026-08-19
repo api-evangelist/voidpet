@@ -1,0 +1,101 @@
+{
+  "item": [
+    {
+      "id": "a633845a-b7ce-4fba-bef3-2d2d38b6456b",
+      "name": "Discovery",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "d2c83dea-bb92-4c55-87a6-f84e4e97b9ad",
+          "name": "Get Voidpet's public discovery document",
+          "request": {
+            "name": "Get Voidpet's public discovery document",
+            "description": {},
+            "url": {
+              "path": [
+                "api",
+                "discovery"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "88fb34dd-8312-4fee-be10-70159775f55a",
+              "name": "Public site metadata and canonical URLs",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "discovery"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"name\": \"string\",\n  \"description\": \"string\",\n  \"url\": \"https://gZIXQIzNitk.pwcR.lwQdCFHA5lV.CPNUJySLLTcteP7dk3mRNM6yE0iDYCJ,dnJsgkXlBawt\",\n  \"products\": [],\n  \"pages\": [\n    {\n      \"path\": \"string\",\n      \"title\": \"string\",\n      \"description\": \"string\",\n      \"url\": \"https://txvHJAnYeGEDpIQcGSo.edXunOEYa3tXdPuyy1CTyaFQaM7j81mdZXVfG68mzk-Vx7s0Q1c.Q7lSz5W3TrwZq\"\n    },\n    {\n      \"path\": \"string\",\n      \"title\": \"string\",\n      \"description\": \"string\",\n      \"url\": \"https://MdPnsgyP.tuTpzKQbNnl6Hm+cEHh0HXCY4eam3SA-Z\"\n    }\n  ],\n  \"discovery\": {}\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://voidpet.com",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "7b2a8e28-c1a9-4fb0-84bc-04ef0b9dca17",
+    "name": "Voidpet Public Discovery API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "Read-only discovery for Voidpet's public products, pages, legal documents, and agent-facing metadata.",
+      "type": "text/plain"
+    }
+  }
+}

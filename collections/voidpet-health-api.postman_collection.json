@@ -1,0 +1,101 @@
+{
+  "item": [
+    {
+      "id": "a1363557-e5ef-45ff-81c3-52a04ef6fea5",
+      "name": "Health",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "ac30bad4-1dc7-49f2-9e52-6c4bbec0f1a2",
+          "name": "Get the public discovery service's health",
+          "request": {
+            "name": "Get the public discovery service's health",
+            "description": {},
+            "url": {
+              "path": [
+                "api",
+                "health"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "466f6b0d-e249-47fd-836a-29ad1cb503ce",
+              "name": "Service health",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "health"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"status\": \"string\",\n  \"service\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://voidpet.com",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "61f313ee-db35-41d2-906e-4c8b346adb49",
+    "name": "Voidpet Public Discovery Health API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "Read-only discovery for Voidpet's public products, pages, legal documents, and agent-facing metadata.",
+      "type": "text/plain"
+    }
+  }
+}

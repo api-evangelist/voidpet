@@ -14,14 +14,13 @@ server:
 authentication:
   required: false
   schemes: []
-description: >-
-  Read-only, public MCP server exposing Voidpet's public products, pages, and
-  legal-document discovery metadata. No authentication; no account or game-state
-  access.
+description: Read-only, public MCP server exposing Voidpet's public products, pages, and legal-document
+  discovery metadata. No authentication; no account or game-state access.
 tools:
 - name: search_public_pages
   title: Search Voidpet public pages
-  description: Search Voidpet's public product, editorial, gallery, and legal pages. No authentication required.
+  description: Search Voidpet's public product, editorial, gallery, and legal pages. No authentication
+    required.
   read_only: true
 resources:
 - uri: https://voidpet.com/api/discovery
@@ -30,3 +29,11 @@ resources:
 - uri: mcp://server-card.json
   name: voidpet-mcp-server-card
   description: Static metadata for the public Voidpet MCP server.
+deployment:
+  mode: remote
+  endpoint: https://voidpet.com/mcp
+  verified: probed
+  probe: live
+  tools: 3
+  checked: '2026-08-12'
+  source: catalog MCP census
