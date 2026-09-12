@@ -103,6 +103,8 @@ x-enrichment:
   artifacts_added: 20
   pass: local-v1
 common:
+- type: Website
+  url: https://www.voidpet.com/
 - type: Overlay
   url: overlays/voidpet-discovery-overlay.yaml
 - type: DomainSecurity
