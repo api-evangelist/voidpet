@@ -1,25 +1,28 @@
 {
   "provider": "voidpet",
   "sources": [
-    "voidpet-discovery-api-openapi.yml",
-    "voidpet-health-api-openapi.yml",
-    "well-known/voidpet-openapi.json"
+    "_original/voidpet-discovery-openapi.json"
   ],
   "outputs": [
     "voidpet-discovery-api-openapi.yml",
     "voidpet-health-api-openapi.yml"
   ],
-  "archived": [
-    "archived well-known/voidpet-openapi.json"
-  ],
+  "archived": [],
   "errors": [],
   "warnings": [],
   "notes": [
-    "discovered stray spec: well-known/voidpet-openapi.json",
-    "voidpet-openapi.json: tagged GET /api/discovery -> Discovery",
-    "voidpet-openapi.json: tagged GET /api/health -> Health",
-    "voidpet-openapi.json: declared missing tag: Discovery",
-    "voidpet-openapi.json: declared missing tag: Health"
+    "1 archived document(s) dropped as subsets of other archived documents",
+    "sourced from openapi/_original/ (1 archived document(s)); previously refined output at the top level was skipped rather than re-split",
+    "voidpet-discovery-openapi.json: upgraded openapi 3.1.0 -> OpenAPI 3.2.0",
+    "voidpet-discovery-openapi.json: tagged paths GET /api/discovery -> Discovery",
+    "voidpet-discovery-openapi.json: tagged paths GET /api/health -> Health",
+    "voidpet-discovery-openapi.json: declared missing tag: Discovery",
+    "voidpet-discovery-openapi.json: declared missing tag: Health",
+    "apis.yml register: already-registered"
   ],
-  "skipped": []
+  "skipped": [
+    "_original/voidpet-openapi.json: archived document superseded by a larger archived document",
+    "voidpet-discovery-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "voidpet-health-api-openapi.yml: previously refined output, superseded by openapi/_original/"
+  ]
 }
