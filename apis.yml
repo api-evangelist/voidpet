@@ -60,7 +60,6 @@ apis:
   name: Voidpet Discovery API
   description: The Discovery API from Voidpet — 1 operation(s) for discovery.
   humanURL: https://voidpet.com
-  baseURL: https://voidpet.com
   tags:
   - Discovery
   properties:
@@ -78,7 +77,6 @@ apis:
   name: Voidpet Health API
   description: The Health API from Voidpet — 1 operation(s) for health.
   humanURL: https://voidpet.com
-  baseURL: https://voidpet.com
   tags:
   - Health
   properties:
