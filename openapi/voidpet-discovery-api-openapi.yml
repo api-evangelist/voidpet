@@ -23,6 +23,23 @@ paths:
       - Discovery
 components:
   schemas:
+    PublicPage:
+      type: object
+      required:
+      - path
+      - title
+      - description
+      - url
+      properties:
+        path:
+          type: string
+        title:
+          type: string
+        description:
+          type: string
+        url:
+          type: string
+          format: uri
     DiscoveryDocument:
       type: object
       required:
@@ -50,20 +67,3 @@ components:
             $ref: '#/components/schemas/PublicPage'
         discovery:
           type: object
-    PublicPage:
-      type: object
-      required:
-      - path
-      - title
-      - description
-      - url
-      properties:
-        path:
-          type: string
-        title:
-          type: string
-        description:
-          type: string
-        url:
-          type: string
-          format: uri
