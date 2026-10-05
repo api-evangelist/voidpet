@@ -1,0 +1,12 @@
+{
+ "url": "https://voidpet.com/.well-known/openapi.json",
+ "requested_url": "https://voidpet.com/.well-known/openapi.json",
+ "status": 200,
+ "content_type": "application/json",
+ "bytes": 2378,
+ "sha256": "bc546d4040c4fbfbe46733a8df7dc3cfd8539a9cc1b383c5f67c9a0394950537",
+ "fetched_at": "2026-10-04",
+ "fetched_by": "APIEvangelist-Harvest/1.0 (+https://apievangelist.com)",
+ "match": "byte-identical",
+ "note": "Re-fetched from the provider by verify-openapi-sources.py; the archived file is byte-identical to what the provider serves."
+}
