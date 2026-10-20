@@ -1,0 +1,111 @@
+{
+  "endpoint": "https://voidpet.com/mcp",
+  "captured": "2026-10-20",
+  "method": "initialize + tools/list (anonymous, no tool called; roadmap#992)",
+  "protocol_version": "2025-06-18",
+  "server_info": {
+    "name": "voidpet-public-site",
+    "title": "Voidpet Public Site",
+    "version": "1.2.0"
+  },
+  "result": {
+    "tools": [
+      {
+        "name": "search_public_knowledge",
+        "title": "Search Voidpet public knowledge",
+        "description": "Search the canonical catalog of Voidpets, vivids, people (public character profiles), and blog posts. Results are ranked by name match first (exact, then prefix, then substring) and then by how many query words appear in the entry's name, slug, summary, and details; ties sort alphabetically, and an empty query lists entries alphabetically. Returns up to limit summaries, each with category, slug, name, summary, and canonical url. It does not return full entry details; pass a result's category and slug to get_public_knowledge_entry for those.",
+        "inputSchema": {
+          "type": "object",
+          "properties": {
+            "query": {
+              "type": "string",
+              "maxLength": 200,
+              "description": "Text to match against names, lore, definitions, attributes, and blog metadata."
+            },
+            "categories": {
+              "type": "array",
+              "maxItems": 4,
+              "items": {
+                "type": "string",
+                "enum": [
+                  "voidpet",
+                  "vivid",
+                  "person",
+                  "blog"
+                ]
+              },
+              "description": "Optional categories to restrict the search to (voidpet, vivid, person, blog). Omit to search all four."
+            },
+            "limit": {
+              "type": "integer",
+              "minimum": 1,
+              "maximum": 25,
+              "default": 10,
+              "description": "Maximum results to return, 1 to 25 (default 10)."
+            }
+          },
+          "required": [
+            "query"
+          ],
+          "additionalProperties": false
+        },
+        "annotations": {
+          "readOnlyHint": true
+        }
+      },
+      {
+        "name": "get_public_knowledge_entry",
+        "title": "Get a Voidpet public knowledge entry",
+        "description": "Get the full structured record for one Voidpet, vivid, person, or blog post. Matches case-insensitively on the canonical slug or on the exact display name within the given category. Returns entry: null (and isError: true) when nothing matches; use search_public_knowledge to find the slug first.",
+        "inputSchema": {
+          "type": "object",
+          "properties": {
+            "category": {
+              "type": "string",
+              "enum": [
+                "voidpet",
+                "vivid",
+                "person",
+                "blog"
+              ],
+              "description": "Which catalog to look in: voidpet, vivid, person, or blog."
+            },
+            "slug": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 100,
+              "description": "Canonical slug or exact display name."
+            }
+          },
+          "required": [
+            "category",
+            "slug"
+          ],
+          "additionalProperties": false
+        },
+        "annotations": {
+          "readOnlyHint": true
+        }
+      },
+      {
+        "name": "search_public_pages",
+        "title": "Search Voidpet public pages",
+        "description": "Search Voidpet's public product, editorial, gallery, and legal pages. No authentication is required. Matching is a case-insensitive substring match of the whole query against each page's title, description, and path; results are not ranked. An empty or omitted query returns every public page. Each result carries the page's path, url, title, and description, not the page content.",
+        "inputSchema": {
+          "type": "object",
+          "properties": {
+            "query": {
+              "type": "string",
+              "maxLength": 200,
+              "description": "Optional text to match against public page titles, descriptions, and paths."
+            }
+          },
+          "additionalProperties": false
+        },
+        "annotations": {
+          "readOnlyHint": true
+        }
+      }
+    ]
+  }
+}
