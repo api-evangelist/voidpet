@@ -17,10 +17,23 @@ authentication:
 description: Read-only, public MCP server exposing Voidpet's public products, pages, and legal-document
   discovery metadata. No authentication; no account or game-state access.
 tools:
+- name: search_public_knowledge
+  description: Search the canonical catalog of Voidpets, vivids, people (public character profiles), and
+    blog posts. Results are ranked by name match first (exact, then prefix, then substring) and then by
+    how many query words appear in the entry's name, slug, summary, and details; ties sort alphabetically,
+    and an empty query lists entries alphabetically. Returns up to limit summaries, each with category,
+    slug, name, summary, and canonical url. It does not return full entry details; pass a result's category
+    and slug to get_public_knowledge_entry for those.
+- name: get_public_knowledge_entry
+  description: 'Get the full structured record for one Voidpet, vivid, person, or blog post. Matches case-insensitively
+    on the canonical slug or on the exact display name within the given category. Returns entry: null
+    (and isError: true) when nothing matches; use search_public_knowledge to find the slug first.'
 - name: search_public_pages
-  title: Search Voidpet public pages
   description: Search Voidpet's public product, editorial, gallery, and legal pages. No authentication
-    required.
+    is required. Matching is a case-insensitive substring match of the whole query against each page's
+    title, description, and path; results are not ranked. An empty or omitted query returns every public
+    page. Each result carries the page's path, url, title, and description, not the page content.
+  title: Search Voidpet public pages
   read_only: true
 resources:
 - uri: https://voidpet.com/api/discovery
@@ -62,3 +75,4 @@ tool_quality:
   scored: false
   note: Facts from the saved tools/list capture (mcp_tool_quality.py); recorded, not scored. Checks learned
     from Glimind's agent-readiness audit.
+tools_count: 3
